@@ -1,0 +1,86 @@
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { addQuestion } from './../../store/handleSurveyesData'
+import { toggle } from './../../store/handlePopups'
+
+function AddQuestionPopup () {
+  const dispatch = useDispatch()
+  const [questionTitle, setQuestionTitle] = useState('')
+  const [options, setOptions] = useState([
+    {
+      Id: 1,
+      Title: 'کم',
+      IsCorrect: false
+    }, {
+      Id: 10,
+      Title: 'متوسط',
+      IsCorrect: true
+    }, {
+      Id: 15,
+      Title: 'زیاد',
+      IsCorrect: false
+    }, {
+      Id: 8,
+      Title: 'خیلی زیاد',
+      IsCorrect: false
+    }
+  ])
+  const setAnswer = (Option) => {
+    const correctOption = options.find(option => option.IsCorrect === true)
+    const correctOptionIndex = options.indexOf(correctOption)
+    options[correctOptionIndex].IsCorrect = false
+    const newCorrectOptionIndex = options.indexOf(Option)
+    options[newCorrectOptionIndex].IsCorrect = true
+    setOptions([...options, Option, correctOption])
+    console.log(options)
+  }
+  const setTitle = (title, Option) => {
+    // setOptions([...options, { ...Option, Title: title }])
+  }
+  return (
+    <span className='h-screen w-screen top-0 absolute z-10 flex justify-center items-center bg-black/50'>
+        <div className=' bg-white rounded-2xl p-10 z-20 absolute items-center flex flex-col h-2/3 w-1/3'>
+            <h5 className=' text-center text-xl text-custom-green mt-6 mb-10'>افزودن سوال</h5>
+            <form onSubmit={() => dispatch(addQuestion({ Title: questionTitle, Options: [] }))} className=' flex flex-col items-center'>
+                    <span className='flex flex-col text-right text-lg mb-10'>
+                        <label htmlFor='surveyName' className=' text-gray-500 rounded-t-xl bg-gray-50 pt-3 px-3'>سوال</label>
+                        <input id='surveyName' value={questionTitle} onChange={(e) => setQuestionTitle(e.target.value)} className='rounded-b-xl text-right pr-3 focus:outline-none w-80 h-auto bg-gray-50 py-2 text-custom-green' />
+                    </span>
+                    <span className='flex flex-col text-right text-lg'>
+                        <label className=' text-gray-500 rounded-t-xl bg-gray-50 pt-3 px-3'>گزینه ها</label>
+                        <span className='rounded-b-xl pr-3 bg-gray-50 w-80 pl-20 pt-5 pb-7'>
+                            <span className='flex flex-col text-custom-green'>
+                                <div className=' flex justify-between '>
+                                    <span className=' flex items-center'>
+                                        <input type='text' value={options[0].Title} onChange={(e) => setTitle(e.target.value, options[0])} className=' text-right focus:outline-none bg-gray-50 border-b border-b-custom-green w-20 pb-1 appearance-none'/>
+                                        <input name='answer' value={options[0].Id} onClick={() => setAnswer(options[0])} type='radio' className='w-4 h-4 ml-2 accent-custom-green' />
+                                    </span>
+                                    <span className=' flex items-center'>
+                                        <input type='text' value={options[1].Title} onChange={(e) => setTitle(e.target.value, options[1])} className='text-right focus:outline-none bg-gray-50  border-b border-b-custom-green w-20 pb-1 appearance-none' />
+                                        <input name='answer' value={options[1].Id} onClick={(e) => setAnswer(options[1])} type='radio' className='w-4 h-4 ml-2 accent-custom-green' />
+                                    </span>
+                                </div>
+                                <div className=' flex justify-between mt-10'>
+                                    <span className=' flex items-center'>
+                                        <input type='text' value={options[2].Title} onChange={(e) => setTitle(e.target.value, options[2])} className='text-right focus:outline-none bg-gray-50  border-b border-b-custom-green w-20 pb-1 appearance-none' />
+                                        <input name='answer' value={options[2].Id} onClick={(e) => setAnswer(options[2])} type='radio' className='w-4 h-4 ml-2 accent-custom-green' />
+                                    </span>
+                                    <span className=' flex items-center'>
+                                        <input type='text' value={options[3].Title} onChange={(e) => setTitle(e.target.value, options[3])} className='text-right focus:outline-none bg-gray-50  border-b border-b-custom-green w-20 pb-1 appearance-none' />
+                                        <input name='answer' value={options[3].Id} onClick={(e) => setAnswer(options[3])} type='radio' className='w-4 h-4 ml-2 accent-custom-green' />
+                                    </span>
+                                </div>
+                            </span>
+                        </span>
+                    </span>
+                    <span className='flex justify-between w-full items-center'>
+                      <button type='button' onClick={() => dispatch(toggle('none'))} className=' text-white bg-custom-red rounded-lg px-12 py-4 text-lg my-14'>لغو</button>
+                      <button type='submit' className=' text-white bg-custom-green rounded-lg px-12 py-4 text-lg my-14'>افزودن</button>
+                    </span>
+            </form>
+        </div>
+    </span>
+  )
+}
+export default AddQuestionPopup
