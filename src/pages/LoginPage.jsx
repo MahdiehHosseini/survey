@@ -10,7 +10,7 @@ function LoginPage () {
   return (
     <span className='h-screen w-full justify-center flex flex-col items-center'>
       <div className=' text-center shadow-lg shadow-gray-300 w-1/4 h-3/5 rounded-2xl bg-white'>
-        <p className=' text-3xl text-custom-green mt-10'>شرکت ملی گاز</p>
+        <p className=' text-2xl text-custom-green mt-10'>شرکت ملی گاز</p>
         <hr className=' mx-20 border my-6' />
         <form onSubmit={ sendData({ Username: username, Password: password }) } className='flex flex-col justify-center items-center w-full h-full'>
           <div className='flex flex-col justify-around h-1/4 w-2/3 mb-20'>
@@ -23,7 +23,7 @@ function LoginPage () {
               <input onChange={(e) => setPassword(e.target.value)} value={password} className='border-b border-b-custom-green-56 w-full h-10 focus:outline-none text-right' />
             </span>
           </div>
-          <Link to='/surveyes-list'><button type='submit' className=' w-32 h-12 mt-10 mb-44 rounded-lg bg-custom-green text-white text-1xl'>ورود</button></Link>
+          <Link to='/surveyes-list'><button type='submit' className=' w-32 h-12 mt-10 mb-44 rounded-lg bg-custom-green text-white text-base'>ورود</button></Link>
         </form>
       </div>
     </span>

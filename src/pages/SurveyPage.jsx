@@ -21,10 +21,10 @@ function SurveyPage () {
             <div className=' shadow-sm shadow-gray-200 text-right bg-white/50 p-6'>
                 <div className='flex justify-between mt-14 mb-6 items-center'>
                     <span className='flex flex-row '>
-                        <button onClick={() => dispatch(deleteSurvey(survey.Id))}><i className=' material-icons text-4xl text-custom-red px-2 py-1 rounded-md border border-custom-red'>delete</i></button>
-                        <Link to='setting'><i className=' material-icons ml-3 text-4xl text-custom-green px-2 py-1 rounded-lg border border-custom-green'>edit</i></Link>
+                        <button onClick={() => dispatch(deleteSurvey(survey.Id))}><i className=' material-icons text-3xl text-custom-red px-2 py-1 rounded-md border border-custom-red'>delete</i></button>
+                        <Link to='setting'><i className=' material-icons ml-3 text-3xl text-custom-green px-2 py-1 rounded-lg border border-custom-green'>edit</i></Link>
                     </span>
-                    <h3 className=' text-custom-green text-2xl '>{survey.Title}</h3>
+                    <h3 className=' text-custom-green text-xl '>{survey.Title}</h3>
                 </div>
                 <hr className='border w-full' />
                 <div>

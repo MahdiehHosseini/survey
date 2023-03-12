@@ -14,26 +14,26 @@ function SurveyInfoSetting () {
         <div className='px-10 py-5 shadow-sm shadow-gray-300 bg-white/40 mt-14 mb-6'>
                     <span className='flex items-center'>
                         <hr className='border w-full border-custom-green' />
-                        <h5 className=' text-custom-green text-2xl ml-4'>تنظیمات</h5>
+                        <h5 className=' text-custom-green text-xl ml-4'>تنظیمات</h5>
                     </span>
                     <form className='my-10'>
                         <span className='flex justify-between'>
                             <span className='flex'>
-                                <span className='flex flex-col text-right text-lg mr-10 w-64'>
+                                <span className='flex flex-col text-right text-base mr-10 w-64'>
                                     <label htmlFor='endDate' className=' text-gray-500 rounded-t-md bg-gray-50 pt-3 px-3'>تاریخ پایان</label>
                                     <input type='date' id='startDate' value={endDate} onChange={(e) => { setEndDate(e.target.value) }} className=' text-left text-custom-green outline-none focus:outline-none rounded-b-xl w-full p-2 bg-gray-50' />
                                 </span>
-                                <span className='flex flex-col text-right text-lg w-64'>
+                                <span className='flex flex-col text-right text-base w-64'>
                                     <label htmlFor='startDate' className=' text-gray-500 rounded-t-md bg-gray-50 pt-3 px-3'>تاریخ شروع</label>
                                     <input type='date' id='startDate' value={startDate} onChange={(e) => { setStartDate(e.target.value) }} className=' text-left text-custom-green outline-none focus:outline-none rounded-b-xl w-full p-2 bg-gray-50' />
                                 </span>
                             </span>
-                            <span className='flex flex-col text-right text-lg'>
+                            <span className='flex flex-col text-right text-base'>
                                 <label htmlFor='surveyName' className=' text-gray-500 rounded-t-md bg-gray-50 pt-3 pb-2 px-3'>نام نظرسنجی</label>
                                 <input id='surveyName' value={surveyName} onChange={(e) => { setSurveyName(e.target.value) }} className='text-right pr-3 rounded-b-md focus:outline-none w-full bg-gray-50 pb-3' />
                             </span>
                         </span>
-                        <span className='flex flex-col text-right text-lg w-full mt-8'>
+                        <span className='flex flex-col text-right text-base w-full mt-8'>
                             <label htmlFor='description' className=' text-gray-500 rounded-t-md bg-gray-50 pt-3 px-3'>توضیحات</label>
                             <textarea
                                 id='description'
