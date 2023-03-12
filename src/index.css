@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 body {
-    background: url(./public/main-bg.png);
+    background: url(./assets/main-bg.png);
     background-size: contain;
 }

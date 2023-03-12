@@ -8,7 +8,7 @@ function AdminNavbar () {
     <div className={`bg-gray-200 items-center rounded-xl px-10 py-5 flex justify-between mx-7 my-10 ${path === '/' ? 'hidden' : 'flex'}`} >
         <div className='flex items-center'>
             <span className='flex items-center'>
-                <img className=' rounded-full w-9 h-9' />
+                <img className=' rounded-full w-9 h-9' src='/src/assets/userImg.jpg' />
                 <p className=' text-sm ml-3'>Welcome, {user.FullName}</p>
             </span>
             <p className=' text-custom-red ml-7'>خروج</p>

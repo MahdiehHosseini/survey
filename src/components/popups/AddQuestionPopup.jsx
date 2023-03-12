@@ -40,14 +40,14 @@ function AddQuestionPopup () {
   }
   return (
     <span className='h-screen w-screen top-0 absolute z-10 flex justify-center items-center bg-black/50'>
-        <div className=' bg-white rounded-2xl p-10 z-20 absolute items-center flex flex-col h-3/5 w-1/4'>
+        <div className=' bg-white rounded-2xl p-10 z-20 absolute items-center flex flex-col h-auto w-1/4'>
             <h5 className=' text-center text-lg text-custom-green mt-6 mb-9'>افزودن سوال</h5>
-            <form onSubmit={() => dispatch(addQuestion({ Title: questionTitle, Options: [] }))} className=' flex flex-col items-center'>
+            <form className='flex flex-col items-center relative h-full' onSubmit={() => dispatch(addQuestion({ Title: questionTitle, Options: [] }))}>
                     <span className='flex flex-col text-right text-sm mb-8'>
                         <label htmlFor='surveyName' className=' text-gray-500 rounded-t-xl bg-gray-50 pt-3 px-3'>سوال</label>
                         <input id='surveyName' value={questionTitle} onChange={(e) => setQuestionTitle(e.target.value)} className='rounded-b-xl text-right pr-3 focus:outline-none w-80 h-auto bg-gray-50 py-2 text-custom-green' />
                     </span>
-                    <span className='flex flex-col text-right text-sm'>
+                    <span className='flex mb-14 flex-col text-right text-sm'>
                         <label className=' text-gray-500 rounded-t-xl bg-gray-50 pt-3 px-3'>گزینه ها</label>
                         <span className='rounded-b-xl pr-3 bg-gray-50 w-80 pl-20 pt-5 pb-7'>
                             <span className='flex flex-col text-custom-green'>
@@ -74,9 +74,9 @@ function AddQuestionPopup () {
                             </span>
                         </span>
                     </span>
-                    <span className='flex justify-between w-full items-center'>
-                      <button type='button' onClick={() => dispatch(toggle('none'))} className=' text-white bg-custom-red rounded-lg px-12 py-4 text-sm my-14'>لغو</button>
-                      <button type='submit' className=' text-white bg-custom-green rounded-lg px-12 py-4 text-sm my-14'>افزودن</button>
+                    <span className='flex justify-between absolute -bottom-16 mt-6 w-full items-center'>
+                      <button type='button' onClick={() => dispatch(toggle('none'))} className=' text-white bg-custom-red rounded-lg px-10 py-3 text-sm my-14'>لغو</button>
+                      <button type='submit' className=' text-white bg-custom-green rounded-lg px-10 py-3 text-sm my-14'>افزودن</button>
                     </span>
             </form>
         </div>

@@ -13,9 +13,9 @@ function EditUserPopup () {
   const dispatch = useDispatch()
   return (
     <span className='h-screen w-screen top-0 absolute z-10 flex justify-center items-center bg-black/50'>
-        <div className=' bg-white rounded-2xl p-10 z-20 absolute items-center flex flex-col h-2/3 w-1/3'>
+        <div className=' bg-white rounded-2xl p-10 z-20 absolute items-center flex flex-col h-auto w-1/3'>
             <h5 className=' text-center text-lg text-custom-green mt-6 mb-5'>افزودن کاربر</h5>
-            <form onSubmit={() => dispatch(addUser({ UserName: userName, CreatedDate: new Date(), Password: password, Address: address, FullName: fullName, PhoneNumber: phoneNumber }))} >
+            <form className=' relative h-full mb-20' onSubmit={() => dispatch(addUser({ UserName: userName, CreatedDate: new Date(), Password: password, Address: address, FullName: fullName, PhoneNumber: phoneNumber }))} >
                 <span className='flex items-center my-4 justify-end'>
                     <input type='checkbox' className=' accent-custom-green mr-3' />
                     <p className='text-base'>دسترسی ادمین</p>
@@ -51,9 +51,9 @@ function EditUserPopup () {
                         className=' p-5 rounded-b-xl text-right focus:outline-none h-full bg-gray-50 pb-1 py-1 text-custom-green'
                     />
                 </span>
-                <span className='flex justify-between w-full items-center px-16 mt-10'>
-                    <button type='button' onClick={() => dispatch(toggle('none'))} className=' text-white bg-custom-red rounded-lg px-12 py-4 text-base'>لغو</button>
-                    <button type='submit' className=' text-white bg-custom-green rounded-lg px-12 py-4 text-base'>ویرایش</button>
+                <span className='flex justify-between w-full absolute bottom-auto mt-6 items-center px-16'>
+                    <button type='button' onClick={() => dispatch(toggle('none'))} className=' text-white bg-custom-red rounded-lg px-10 py-3 text-base'>لغو</button>
+                    <button type='submit' className=' text-white bg-custom-green rounded-lg px-10 py-3 text-base'>ویرایش</button>
                 </span>
             </form>
         </div>

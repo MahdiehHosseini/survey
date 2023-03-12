@@ -12,8 +12,8 @@ function QuestionsListBox ({ question }) {
         <div className='border rounded-xl bg-white py-1 px-8 w-5/6 my-3'>
             <span className='flex justify-between items-center'>
                 <span className='flex flex-col'>
-                    <button onClick={() => dispatch(toggle('editQuestion'))}><i className=' material-icons mb-3 text-3xl text-custom-green px-2 py-1 rounded-lg border border-custom-green'>edit</i></button>
-                    <button onClick={() => dispatch(deleteQuestion(question.Id, question.SurveyId))}><i className=' material-icons text-3xl text-custom-red px-2 py-1 rounded-md border border-custom-red'>delete</i></button>
+                    <button onClick={() => dispatch(toggle('editQuestion'))}><i className=' material-icons mb-3 text-2xl text-custom-green px-2 py-1 rounded-lg border border-custom-green'>edit</i></button>
+                    <button onClick={() => dispatch(deleteQuestion(question.Id, question.SurveyId))}><i className=' material-icons text-2xl text-custom-red px-2 py-1 rounded-md border border-custom-red'>delete</i></button>
                 </span>
                 <QuestionBox isAdmin={true} question={question} />
             </span>
