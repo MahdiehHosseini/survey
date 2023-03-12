@@ -10,7 +10,8 @@ module.exports = {
       },
       colors: {
         'custom-green': 'rgba(15, 61, 62, 86%)',
-        'custom-red': 'rgba(67, 17, 17, 86%)'
+        'custom-red': 'rgba(67, 17, 17, 86%)',
+        'custom-green-56': 'rgba(15, 61, 62, 56%)',
       }
     }
   },

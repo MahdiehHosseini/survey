@@ -13,6 +13,7 @@ function SurveySettingPage () {
     <span className='flex justify-center'>
         <div className='w-4/5'>
             <ul className='flex float-right'>
+                <li>تنظیمات /</li>
                 <li >{survey.Title} /</li>
                 <li className=' text-gray-600'>لیست نظرسنجی</li>
             </ul>
